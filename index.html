@@ -7,7 +7,19 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <!-- Premium Floating Navbar -->
+  <nav class="navbar">
+    <div class="nav-left">Sita Vippala</div>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
   <header class="hero">
+    <!-- Typing Animation -->
+    <h1 class="typing">Sita Mahalakshmi Vippala</h1>
     <h1>Sita Mahalakshmi Vippala</h1>
     <h2>DevOps | AWS Cloud Engineer</h2>
     <p>DevOps and Cloud Engineer specializing in AWS, CI/CD, containers, and automation.</p>
@@ -23,22 +35,39 @@
     <img src="profile.jpg" alt="Profile Photo" class="profile-pic" />
   </section>
 
-  <section class="about fade-in">
+  <section id="about" class="about fade-in">
     <h3>About Me</h3>
     <p>I am a DevOps and AWS Cloud Engineer with hands‑on experience in infrastructure automation, container orchestration, CI/CD pipelines, and monitoring systems.</p>
   </section>
 
-  <section class="skills fade-in">
+  <section id="skills" class="skills fade-in">
     <h3>Skills</h3>
     <div class="skill-grid">
-      <div class="skill-card"><h4>Cloud</h4><p>AWS EC2, VPC, Lambda, S3, IAM, RDS</p></div>
-      <div class="skill-card"><h4>DevOps</h4><p>Docker, Kubernetes, Terraform, GitHub Actions</p></div>
-      <div class="skill-card"><h4>Monitoring</h4><p>CloudWatch, Prometheus, Grafana</p></div>
-      <div class="skill-card"><h4>Programming</h4><p>Python, Bash</p></div>
+      <div class="skill-card"><h4>Cloud Platforms</h4><p>AWS (EC2, ECS, EKS, Lambda, S3, RDS, Aurora, DynamoDB, Route53, CloudFront, Glue, EMR, Redshift, IAM, KMS, CloudWatch, API Gateway, EventBridge, Kinesis, Amazon Connect, Bedrock), Azure, GCP</p></div>
+
+      <div class="skill-card"><h4>Programming & Scripting</h4><p>Node.js, Python, Go, Bash, Groovy, Java</p></div>
+
+      <div class="skill-card"><h4>DevOps & CI/CD</h4><p>Jenkins, GitHub Actions, GitLab CI, AWS CodePipeline, CircleCI</p></div>
+
+      <div class="skill-card"><h4>Infrastructure as Code</h4><p>Terraform, AWS CloudFormation</p></div>
+
+      <div class="skill-card"><h4>Containers & Orchestration</h4><p>Docker, Kubernetes (EKS), OpenShift, Helm, ArgoCD</p></div>
+
+      <div class="skill-card"><h4>Configuration Management</h4><p>Ansible, Chef, Puppet, AWS Systems Manager</p></div>
+
+      <div class="skill-card"><h4>Monitoring & Logging</h4><p>Prometheus, Grafana, ELK/EFK, Splunk, Datadog, CloudWatch</p></div>
+
+      <div class="skill-card"><h4>Databases & Big Data</h4><p>DynamoDB, MySQL, PostgreSQL, Aurora, Redshift, Snowflake, Kafka, Airflow, AWS Glue</p></div>
+
+      <div class="skill-card"><h4>Networking & Security</h4><p>VPC, VPN, Direct Connect, Transit Gateway, WAF, Shield, IAM, KMS, Secrets Manager, Service Mesh (Istio, Linkerd)</p></div>
+
+      <div class="skill-card"><h4>Voice & CRM Integrations</h4><p>Amazon Connect, Contact Lens, Salesforce Service Cloud Voice, ServiceNow, Lex Bots, REST/GraphQL, JWT, OAuth2, SAML</p></div>
+
+      <div class="skill-card"><h4>Methodologies</h4><p>Agile, Scrum, GitOps, DevSecOps, SRE, ITIL</p></div>
     </div>
   </section>
 
-  <section class="projects fade-in">
+  <section id="projects" class="projects fade-in">
     <h3>Projects</h3>
 
     <div class="project-card">
@@ -72,7 +101,7 @@
     </div>
   </section>
 
-  <footer class="contact fade-in">
+  <footer id="contact" class="contact fade-in">
     <h3>Contact</h3>
     <p>Email: vippalasita@gmail.com</p>
     <p><a href="https://github.com/sitayash/trainin-devops-work">GitHub</a> | <a href="https://www.linkedin.com/in/sita-vippala/details/experience/">LinkedIn</a></p>
@@ -83,5 +112,44 @@
         document.body.classList.toggle('dark-mode');
       });
     </script>
+  <!-- Back to Top Button -->
+  <button id="backToTop" class="back-to-top">▲</button>
+
+  <!-- Resume Download Button -->
+  <div class="resume-btn">
+    <a href="Sita_Vippala_Resume.pdf" class="button-link" download>Download Resume</a>
+  </div>
+
+  <!-- Background Shapes -->
+  <div class="bg-shape shape1"></div>
+  <div class="bg-shape shape2"></div>
+
+  <script>
+      const toggleBtn = document.getElementById('toggleTheme');
+      toggleBtn.addEventListener('click', () => {
+        document.body.classList.toggle('dark-mode');
+      });
+
+      // Back to top
+      const btn = document.getElementById('backToTop');
+      window.onscroll = () => {
+        if (document.documentElement.scrollTop > 200) btn.style.display = 'block';
+        else btn.style.display = 'none';
+      };
+      btn.onclick = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+
+      // Typing effect
+      const typedText = document.querySelector('.typing');
+      const text = 'Sita Mahalakshmi Vippala';
+      let i = 0;
+      function type() {
+        if (i < text.length) {
+          typedText.innerHTML = text.substring(0, i+1);
+          i++;
+          setTimeout(type, 100);
+        }
+      }
+      type();
+  </script>
 </body>
 </html>
